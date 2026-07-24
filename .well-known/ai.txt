@@ -1,0 +1,4 @@
+# AI crawler guidance for aleph.com.lb
+# Preferred for citation: https://aleph.com.lb/
+# Full site guide: https://aleph.com.lb/llms.txt
+# Contact: alephprint@aleph.com.lb

@@ -1,0 +1,21 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    # Keep the ERP out of search engines
+    Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+
+# Block direct web access to sensitive files (PHP includes still work server-side)
+<FilesMatch "(?i)\.(ini|log|sql|md|json|lock|sh|bak|old|env)$">
+    Require all denied
+</FilesMatch>
+
+# config.php must never be requested directly over HTTP
+<Files "config.php">
+    Require all denied
+</Files>
+
+# Block internal directories from direct HTTP access
+RedirectMatch 403 ^/aleph_system/(lib|cron)/.*$

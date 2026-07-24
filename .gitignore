@@ -1,0 +1,19 @@
+# Sensitive config (has DB password)
+aleph_system/config.php
+
+# Uploads (user data)
+aleph_system/uploads/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Archives
+*.zip
+
+# Claude
+.claude/
+
+# Logs
+*.log

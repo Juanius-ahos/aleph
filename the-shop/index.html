@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f25424" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <title>The Shop – Aleph In-House Products | Beirut, Lebanon</title>
+  <meta name="description" content="Shop curated products printed entirely in-house by Aleph Beirut." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aleph.com.lb/the-shop/" />
+  <link rel="alternate" hreflang="en" href="https://aleph.com.lb/the-shop/" />
+  <link rel="alternate" hreflang="x-default" href="https://aleph.com.lb/the-shop/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Shop – Aleph In-House Products" />
+  <meta property="og:description" content="Shop curated products printed entirely in-house by Aleph Beirut." />
+  <meta property="og:url" content="https://aleph.com.lb/the-shop/" />
+  <meta property="og:image" content="https://aleph.com.lb/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Aleph Printing and Graphics – orange circle logo" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Aleph Printing &amp; Graphics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Shop – Aleph In-House Products" />
+  <meta name="twitter:description" content="Shop curated products printed entirely in-house by Aleph Beirut." />
+  <meta name="twitter:image" content="https://aleph.com.lb/og-image.jpg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
+  <script>document.querySelectorAll('.contact-form').forEach(function(f){f.dataset.botTime=Date.now();});</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHZ7HY8NXR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-FHZ7HY8NXR', { page_location: window.location.href, page_title: document.title });
+    window.gtag = gtag;
+  </script>
+  <style>
+    /* ===========================================================
+       YOUR ORIGINAL STYLES – KEPT EXACTLY AS PROVIDED
+    =========================================================== */
+
+    .shop-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .filter-pill {
+      border: 1.5px solid #d1d5db;
+      border-radius: 99px;
+      padding: 7px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
+      color: #374151;
+      background: #fff;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .filter-pill.active, .filter-pill:hover {
+      background: #111827;
+      color: #fff;
+      border-color: #111827;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 28px;
+      padding-bottom: 80px;
+    }
+
+    .pcard {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: transform .22s, box-shadow .22s;
+    }
+    .pcard:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,.1); }
+
+    .pcard-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      z-index: 3;
+    }
+    .pcard-badge.new { background: #c8501c; color: #fff; }
+    .pcard-badge.sold-out { background: #111827; color: #fff; }
+
+    .pcard-img {
+      overflow: hidden;
+      position: relative;
+      background: #fafafa;
+    }
+    .pcard-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .4s;
+    }
+    .pcard:hover .pcard-img img { transform: scale(1.05); }
+
+    .pcard-body { padding: 18px 20px 20px; }
+    .pcard-cat {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #c8501c;
+      margin-bottom: 5px;
+    }
+    .pcard-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 7px;
+      line-height: 1.3;
+    }
+    .pcard-desc {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 0 0 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .pcard-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .pcard-price {
+      font-size: 17px;
+      font-weight: 800;
+      color: #111827;
+      white-space: nowrap;
+    }
+    .pcard-price .cur { font-size: 12px; font-weight: 500; color: #9ca3af; margin-left: 2px; }
+    .pcard-price.inquire { font-size: 13px; font-weight: 500; color: #9ca3af; }
+
+    .btn-shop-add {
+      background: #111827;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'Open Sans', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background .15s, transform .1s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-shop-add:hover { background: #c8501c; }
+    .btn-shop-add:active { transform: scale(.96); }
+
+    /* Cart & modal styles (your existing ones) */
+    .cart-fab {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 54px; height: 54px;
+      background: #111827; border: none; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 8000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.28);
+      transition: background .15s, transform .15s;
+    }
+    .cart-fab:hover { background: #c8501c; transform: scale(1.07); }
+    .cart-fab i { color: #fff; font-size: 20px; }
+    .cart-fab .cnt {
+      position: absolute; top: -2px; right: -2px;
+      background: #c8501c; color: #fff;
+      font-size: 10px; font-weight: 800;
+      min-width: 18px; height: 18px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid #fff;
+    }
+    .cart-fab .cnt[hidden] { display: none; }
+
+    .cart-veil {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 8900;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s;
+    }
+    .cart-veil.on { opacity: 1; pointer-events: all; }
+
+    .cart-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 400px; max-width: 100vw;
+      background: #fff; z-index: 9000;
+      display: flex; flex-direction: column;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.4,0,.2,1);
+      box-shadow: -6px 0 36px rgba(0,0,0,.12);
+    }
+    .cart-drawer.on { transform: translateX(0); }
+
+    .cart-hd {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .cart-hd h2 { font-size: 17px; font-weight: 700; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px; }
+    .cart-x { background: none; border: none; font-size: 18px; color: #6b7280; cursor: pointer; transition: color .15s; }
+    .cart-x:hover { color: #111827; }
+    .cart-body { flex: 1; overflow-y: auto; padding: 12px 24px; }
+    .cart-empty { text-align: center; padding: 60px 0; color: #9ca3af; }
+    .cart-empty i { font-size: 36px; margin-bottom: 12px; opacity: .4; display:block; }
+    .citem { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f3f4f6; align-items: flex-start; }
+    .citem img { width: 68px; height: 68px; object-fit: cover; border-radius: 8px; flex-shrink:0; }
+    .citem-info { flex:1; min-width:0; }
+    .citem-info h4 { font-size: 13px; font-weight: 700; color: #111827; margin:0 0 6px; }
+    .citem-row { display:flex; align-items:center; gap:6px; }
+    .qbtn { width: 28px; height: 28px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-weight:600; font-size:14px; transition:all .15s; }
+    .qbtn:hover { border-color: #c8501c; color: #c8501c; }
+    .qval { font-size:14px; font-weight:700; min-width:20px; text-align:center; color:#111827; }
+    .citem-lp { font-size:14px; font-weight:700; color:#111827; white-space:nowrap; }
+    .rm-btn { background:none; border:none; color:#d1d5db; cursor:pointer; font-size:14px; padding:4px; transition:color .15s; }
+    .rm-btn:hover { color:#ef4444; }
+    .cart-ft { padding: 18px 24px; border-top: 1px solid #e5e7eb; background: #fafafa; }
+    .subtotal-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .subtotal-row .lbl { font-size:13px; color:#6b7280; font-weight:500; }
+    .subtotal-row .val { font-size:18px; font-weight:800; color:#111827; }
+    .cod-pill { display:flex; align-items:center; gap:8px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:10px 14px; margin-bottom:14px; font-size:12px; font-weight:600; color:#166534; }
+    .cod-pill i { color:#22c55e; font-size:16px; }
+    .btn-checkout {
+      width: 100%; background: #111827; color: #fff;
+      border: none; border-radius: 8px; padding: 14px;
+      font-weight: 700; cursor: pointer; transition: all .2s;
+    }
+    .btn-checkout:hover { background: #c8501c; }
+    .btn-checkout:disabled { opacity: .4; cursor:default; }
+
+    /* Modal styles */
+    .pm-veil, .co-veil {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 9100;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s ease;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .pm-veil.on, .co-veil.on { opacity: 1; pointer-events: all; }
+    .pm-box, .co-box {
+      background: #fff; border-radius: 20px;
+      max-width: 860px; width: 100%;
+      max-height: 90vh; overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      transform: scale(0.95) translateY(10px);
+      transition: transform .3s var(--ease-quart);
+    }
+    .pm-veil.on .pm-box, .co-veil.on .co-box { transform: scale(1) translateY(0); }
+    .pm-box { display: grid; grid-template-columns: 1fr 1fr; }
+    .pm-x, .co-x {
+      position: absolute; top: 14px; right: 14px; z-index: 10;
+      background: rgba(0,0,0,0.5); border: none; color: #fff;
+      width: 36px; height: 36px; border-radius: 50%;
+      font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, transform .15s;
+    }
+    .pm-x:hover, .co-x:hover { background: rgba(0,0,0,0.75); transform: scale(1.08); }
+    .pm-img-wrap {
+      position: relative; overflow: hidden;
+      background: #f3f4f6;
+      display: flex; align-items: flex-start; justify-content: center;
+    }
+    .pm-img-wrap img { width: 100%; height: auto; display: block; }
+    .pm-num {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--accent); color: #fff;
+      font-size: 12px; font-weight: 800; letter-spacing: .1em;
+      padding: 5px 12px; border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(242,84,36,0.35);
+    }
+    .pm-body {
+      padding: 32px 32px 28px;
+      display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .pm-cat {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+    }
+    .pm-title { font-size: 22px; font-weight: 800; color: #111827; line-height: 1.2; margin-bottom: 10px; }
+    .pm-price { font-size: 24px; font-weight: 800; color: #111827; margin-bottom: 16px; }
+    .pm-price .cur { font-size: 14px; font-weight: 500; color: #9ca3af; margin-left: 4px; }
+    .pm-price.inquire { font-size: 14px; font-weight: 500; color: #9ca3af; }
+    .pm-desc {
+      font-size: 13px; color: #4b5563; line-height: 1.7;
+      margin-bottom: 20px; max-height: 160px; overflow-y: auto;
+      padding-right: 8px;
+    }
+    .pm-desc::-webkit-scrollbar { width: 4px; }
+    .pm-desc::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
+
+    /* Variant chips */
+    .var-grp { margin-bottom: 16px; }
+    .var-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #374151; margin-bottom: 8px; }
+    .var-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .vchip {
+      padding: 8px 16px; border: 1.5px solid #e5e7eb; border-radius: 8px;
+      background: #fff; color: #374151; font-size: 12px; font-weight: 600;
+      font-family: "Open Sans", sans-serif; cursor: pointer;
+      transition: all .15s ease;
+    }
+    .vchip:hover { border-color: var(--accent); color: var(--accent); }
+    .vchip.on { border-color: var(--accent); background: var(--accent-subtle); color: var(--accent); }
+    .vchip.na { opacity: .35; cursor: not-allowed; }
+
+    /* Quantity row */
+    .pm-qty-row {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 18px; padding: 12px 0; border-top: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6;
+    }
+    .pm-qty-row .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #374151; margin-right: auto; }
+    .pm-qbtn {
+      width: 36px; height: 36px; border: 1.5px solid #e5e7eb; border-radius: 10px;
+      background: #fff; cursor: pointer; font-size: 18px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .15s; color: #111827;
+    }
+    .pm-qbtn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-subtle); }
+    .pm-qval { font-size: 18px; font-weight: 800; min-width: 36px; text-align: center; color: #111827; }
+
+    /* Add to cart button */
+    .btn-pm-add {
+      width: 100%; background: #111827; color: #fff;
+      border: none; border-radius: 12px; padding: 16px;
+      font-size: 13px; font-weight: 700; letter-spacing: .03em;
+      cursor: pointer; transition: all .2s ease;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-pm-add:hover { background: var(--accent); box-shadow: 0 8px 24px rgba(242,84,36,0.3); transform: translateY(-1px); }
+    .btn-pm-add:active { transform: scale(0.98); }
+    .btn-pm-add.done { background: #22c55e; pointer-events: none; box-shadow: 0 8px 24px rgba(34,197,94,0.3); }
+    .btn-pm-add:disabled { opacity: .4; cursor: default; transform: none; box-shadow: none; }
+    .btn-pm-add:disabled:hover { background: #111827; }
+
+    /* ── Checkout Modal Redesign ── */
+    .co-veil { align-items: flex-end; padding: 0; }
+    @media (min-width: 640px) { .co-veil { align-items: center; padding: 20px; } }
+    .co-box {
+      max-width: 560px; width: 100%;
+      border-radius: 20px 20px 0 0;
+      max-height: 96vh; overflow-y: auto;
+      display: flex; flex-direction: column; position: relative;
+      padding: 0;
+    }
+    @media (min-width: 640px) { .co-box { border-radius: 20px; max-height: 90vh; } }
+    .co-hd {
+      background: #0f172a; color: #fff;
+      padding: 26px 28px 20px;
+      border-radius: 20px 20px 0 0;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) { .co-hd { border-radius: 20px 20px 0 0; } }
+    .co-hd-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+    .co-hd-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .co-hd-title { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 2px; }
+    .co-hd-sub { font-size: 12px; color: rgba(255,255,255,.5); margin: 0; }
+    .co-summary {
+      background: rgba(255,255,255,.07); border-radius: 10px;
+      padding: 4px 0; margin-bottom: 14px; overflow: hidden;
+    }
+    .co-sitem {
+      display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+    }
+    .co-sitem + .co-sitem { border-top: 1px solid rgba(255,255,255,.08); }
+    .co-sitem img { width: 36px; height: 36px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .co-sitem-name { flex: 1; font-size: 13px; font-weight: 600; color: #e2e8f0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .co-sitem-qty { font-size: 11px; color: rgba(255,255,255,.4); flex-shrink: 0; }
+    .co-sitem-price { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; }
+    .co-total-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0 0; border-top: 1px solid rgba(255,255,255,.15);
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,.5);
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+    .co-total-val { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .co-body { background: #fff; padding: 24px 28px 28px; flex: 1; }
+    .co-fields-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 480px) { .co-fields-row { grid-template-columns: 1fr; } }
+    .co-field { margin-bottom: 16px; }
+    .co-field label {
+      display: block; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      color: #6b7280; margin-bottom: 6px;
+    }
+    .co-field input, .co-field textarea {
+      width: 100%; border: 1.5px solid #e5e7eb; border-radius: 8px;
+      padding: 10px 14px; font-size: 14px;
+      font-family: 'Open Sans', sans-serif; color: #111827;
+      background: #f9fafb; transition: border-color .15s, background .15s;
+      outline: none; box-sizing: border-box;
+    }
+    .co-field input:focus, .co-field textarea:focus { border-color: #c8501c; background: #fff; }
+    .co-field textarea { resize: none; }
+
+    .btn-order {
+      width: 100%; background: #111827; color: #fff; border: none;
+      border-radius: 10px; padding: 14px; font-size: 14px; font-weight: 700;
+      font-family: 'Open Sans', sans-serif; cursor: pointer; transition: all .2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-order:hover { background: #c8501c; }
+    .btn-order:disabled { opacity: .5; cursor: default; background: #111827; }
+    .success-panel {
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      padding: 60px 40px; text-align: center; background: #fff; border-radius: 20px;
+    }
+    .success-icon { font-size: 56px; color: #22c55e; margin-bottom: 20px; }
+    .success-panel h3 { font-size: 22px; font-weight: 800; color: #111827; margin: 0 0 10px; }
+    .success-panel p { font-size: 14px; color: #6b7280; margin: 0 0 24px; }
+    .btn-success-close {
+      background: #111827; color: #fff; border: none; border-radius: 10px;
+      padding: 12px 28px; font-size: 13px; font-weight: 700;
+      font-family: 'Open Sans', sans-serif; cursor: pointer; transition: background .15s;
+    }
+    .btn-success-close:hover { background: #c8501c; }
+    @media (max-width: 768px) {
+      .pm-box { grid-template-columns: 1fr; }
+      .pm-body { padding: 24px 20px 20px; }
+      .pm-title { font-size: 20px; }
+      .pm-price { font-size: 20px; }
+      .pm-desc { max-height: 120px; font-size: 12px; }
+      .pm-qbtn { width: 44px; height: 44px; }
+      .pm-qval { font-size: 20px; min-width: 44px; }
+      .btn-pm-add { padding: 14px; font-size: 14px; }
+      .vchip { padding: 10px 18px; }
+    }
+
+
+    /* ===========================================================
+       VISUAL UPGRADE ADDITIONS – only extra polish, no removals
+    =========================================================== */
+    .shop-section .container-2xl {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    .shop-filters { justify-content: center; margin-bottom: 56px; gap: 12px; }
+    .filter-pill {
+      padding: 10px 24px;
+      font-size: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .filter-pill:hover { background: #f9fafb; border-color: #c8501c; color: #c8501c; box-shadow: 0 4px 12px rgba(200,80,28,0.08); }
+    .filter-pill.active { box-shadow: 0 4px 14px rgba(0,0,0,0.15); transform: translateY(-1px); }
+
+    .products-grid { gap: 32px; }
+    .pcard {
+      border-radius: 16px;
+      border: 1px solid #f3f4f6;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .pcard:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #e5e7eb; }
+    .pcard-badge { border-radius: 6px; padding: 6px 12px; backdrop-filter: blur(4px); }
+    .pcard-badge.new { box-shadow: 0 4px 12px rgba(200,80,28,0.3); }
+    .pcard-img img { transition: transform 0.5s ease; }
+    .pcard:hover .pcard-img img { transform: scale(1.06); }
+    .pcard-body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .pcard-cat { font-size: 11px; opacity: 0.9; margin-bottom: 6px; }
+    .pcard-name { font-size: 18px; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .pcard-desc { margin-bottom: 20px; flex: 1; }
+    .pcard-footer { margin-top: auto; }
+    .pcard-price { font-size: 20px; letter-spacing: -0.02em; }
+    .pcard-price .cur { font-weight: 600; margin-left: 4px; }
+    .btn-shop-add {
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-size: 13px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+    }
+    .btn-shop-add:hover { box-shadow: 0 6px 18px rgba(200,80,28,0.25); transform: translateY(-1px); }
+    .btn-shop-add:active { transform: scale(0.97); }
+
+    .cart-fab { box-shadow: 0 8px 28px rgba(0,0,0,0.25); transition: background 0.2s, transform 0.2s; }
+    .cart-fab:hover { transform: scale(1.08); }
+    .cart-fab .cnt { box-shadow: 0 2px 8px rgba(200,80,28,0.4); }
+    .cart-drawer { box-shadow: -8px 0 40px rgba(0,0,0,0.12); border-radius: 24px 0 0 24px; }
+    .btn-checkout { border-radius: 12px; letter-spacing: 0.02em; transition: all 0.2s; }
+    .btn-checkout:hover { box-shadow: 0 6px 20px rgba(200,80,28,0.3); }
+
+    .pm-box { border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+    /* co-box uses its own styles — keep overflow-y:auto and proper border-radius */
+    .co-box { border-radius: 20px 20px 0 0; overflow-x: hidden; overflow-y: auto; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+    @media (min-width: 640px) { .co-box { border-radius: 20px; } }
+    .btn-pm-add { border-radius: 12px; transition: all 0.2s; }
+    .btn-pm-add:hover { background: #c8501c; }
+    .btn-pm-add.done { background: #22c55e; pointer-events: none; }
+    .pm-qbtn { width: 32px; height: 32px; border-radius: 8px; font-weight: 600; }
+    .pm-qval { font-size: 18px; font-weight: 700; min-width: 32px; text-align: center; }
+
+    /* How It Works */
+    .how-wrap { margin-bottom: 40px; }
+    .how-steps {
+      display: flex; align-items: flex-start; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .how-step {
+      flex: 1; min-width: 180px; max-width: 260px;
+      text-align: center; padding: 28px 16px;
+      background: #fff; border: 1px solid #f3f4f6;
+      border-radius: 16px; transition: box-shadow .3s ease, transform .3s ease;
+    }
+    .how-step:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .how-icon {
+      width: 56px; height: 56px; margin: 0 auto 14px;
+      border-radius: 50%; background: linear-gradient(135deg, #fff7ed, #fff1f2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: #c8501c;
+    }
+    .how-step h4 { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .03em; }
+    .how-step p { font-size: 13px; color: #6b7280; line-height: 1.6; margin: 0; }
+    .how-arrow {
+      display: flex; align-items: center; padding-top: 44px;
+      color: #d1d5db; font-size: 18px; flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .how-steps { flex-direction: column; align-items: center; }
+      .how-step { max-width: 360px; width: 100%; }
+      .how-arrow { transform: rotate(90deg); padding-top: 0; }
+    }
+
+    /* Toast notification */
+    .toast-wrap {
+      position: fixed; top: 130px; right: 24px; z-index: 9500;
+      display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+    }
+    .toast {
+      background: #111827; color: #fff; padding: 14px 20px;
+      border-radius: 12px; font-size: 13px; font-weight: 600;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      display: flex; align-items: center; gap: 10px;
+      pointer-events: all; animation: toastIn .35s var(--ease-spring) forwards;
+      max-width: 340px;
+    }
+    .toast i { color: #22c55e; font-size: 16px; }
+    .toast.out { animation: toastOut .3s ease forwards; }
+    @keyframes toastIn { from { opacity: 0; transform: translateX(60px) scale(.9); } to { opacity: 1; transform: translateX(0) scale(1); } }
+    @keyframes toastOut { from { opacity: 1; transform: translateX(0) scale(1); } to { opacity: 0; transform: translateX(60px) scale(.9); } }
+
+    /* Staggered card entrance */
+    .pcard { opacity: 0; transform: translateY(20px); transition: opacity .45s var(--ease-quart), transform .45s var(--ease-quart), box-shadow .25s ease, border-color .25s ease; }
+    .pcard.show { opacity: 1; transform: translateY(0); }
+
+    /* Category sections */
+    #productsGrid { padding-bottom: 80px; }
+    .cat-section { margin-bottom: 72px; }
+    .cat-section-hd {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #111827;
+    }
+    .cat-section-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid #e5e7eb;
+      background: #f3f4f6;
+    }
+    .cat-section-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cat-section-meta { flex: 1; }
+    .cat-section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111827;
+      margin: 0 0 4px;
+      letter-spacing: -0.01em;
+    }
+    .cat-section-count {
+      font-size: 12px;
+      font-weight: 600;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .cat-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 640px) {
+      .cat-products-grid { grid-template-columns: 1fr; gap: 20px; }
+      .pcard-body { padding: 16px 20px 20px; }
+      .pcard-name { font-size: 16px; }
+      .cat-section-title { font-size: 18px; }
+      .cat-section-img { width: 56px; height: 56px; }
+      .toast-wrap { right: 16px; left: 16px; top: 120px; }
+      .toast { max-width: 100%; }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/app-BMUD5HRh.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/app-CAbQuvFe.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aleph.com.lb/the-shop#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aleph.com.lb/" },
+        { "@type": "ListItem", "position": 2, "name": "The Shop", "item": "https://aleph.com.lb/the-shop" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aleph.com.lb/the-shop#webpage",
+      "url": "https://aleph.com.lb/the-shop",
+      "name": "The Shop \u2013 Aleph In-House Products | Beirut, Lebanon",
+      "description": "Shop curated products printed entirely in-house by Aleph Beirut.",
+      "breadcrumb": { "@id": "https://aleph.com.lb/the-shop#breadcrumb" },
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://aleph.com.lb/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================================================
+     YOUR EXACT HEADER (unchanged)
+============================================================ -->
+<div class="site-wrapper">
+  <header class="header" id="siteHeader">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="Aleph home"><img width="440" height="508" decoding="async" src="/assets/logo--CUOgtlr.png" alt="Aleph Printing and Graphics" /></a>
+      <nav class="nav-desktop">
+        <a href="/the-printing-press/" class="nav-link" data-navfg data-i18n="nav_services">Services</a>
+        <a href="/our-work/" class="nav-link" data-navfg data-i18n="nav_ourWork">Our Work</a>
+        <div class="dropdown" id="industriesDropdown">
+          <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-navfg data-i18n="nav_industries">Industries <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="dropdown-menu">
+            <div class="dropdown-arrow"></div>
+            <div class="dropdown-panel">
+              <p class="panel-title" data-i18n="nav_industriesPanel">Printing by Industry</p>
+              <a href="/industries/pharmaceutical-printing-lebanon/" class="dropdown-item" data-i18n="nav_pharma">Pharmaceutical <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/industries/food-packaging-printing-lebanon/" class="dropdown-item" data-i18n="nav_food">Food Packaging <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/industries/cosmetic-packaging-printing-lebanon/" class="dropdown-item" data-i18n="nav_cosmetics">Cosmetic Packaging <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/industries/luxury-packaging-printing-lebanon/" class="dropdown-item" data-i18n="nav_luxury">Luxury Packaging <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/industries/book-publishing-printing-lebanon/" class="dropdown-item" data-i18n="nav_book">Book &amp; Publishing <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/industries/security-printing-lebanon/" class="dropdown-item" data-i18n="nav_security">Security Printing <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/the-printing-press/" class="dropdown-all" data-i18n="nav_allServices">All Printing Services →</a>
+            </div>
+          </div>
+        </div>
+        <a href="/the-shop/" class="nav-link" data-navfg data-i18n="nav_shop">The Shop</a>
+        <a href="/#whatwedo" class="nav-link" data-navfg data-i18n="nav_about">About</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="nav-divider" id="navDivider"></span>
+        <div class="lang-switcher"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="fr">FR</button><button class="lang-btn" data-lang="ar">AR</button></div>
+        <button class="nav-btn" data-navfg data-i18n="nav_contact" data-scroll="getintouch">Contact</button>
+        <a href="/#quoterequest" class="quote-btn" data-cta="Request a Quote" data-page="Nav" data-i18n="nav_requestQuote" data-open-quote-modal>Request a Quote</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" data-i18n-aria="nav_openMenu" aria-label="Open menu" data-navfg-icon><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <div class="mobile-panel-head">
+      <a href="/" data-close-mobile><img width="440" height="508" decoding="async" src="/assets/logo--CUOgtlr.png" alt="Aleph" /></a>
+      <button class="mobile-close" id="mobileClose" data-i18n-aria="nav_close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="/the-printing-press/" class="mobile-link" data-close-mobile data-i18n="nav_services">Services</a>
+      <a href="/our-work/" class="mobile-link" data-close-mobile data-i18n="nav_ourWork">Our Work</a>
+      <div class="mobile-acc" id="mobileAcc">
+        <button class="mobile-acc-btn" id="mobileAccBtn" data-i18n="nav_industries">Industries <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="mobile-acc-body">
+          <div class="mobile-acc-inner">
+            <a href="/industries/pharmaceutical-printing-lebanon/" class="mobile-sub" data-i18n="nav_pharma"><span class="dot"></span>Pharmaceutical</a>
+            <a href="/industries/food-packaging-printing-lebanon/" class="mobile-sub" data-i18n="nav_food"><span class="dot"></span>Food Packaging</a>
+            <a href="/industries/cosmetic-packaging-printing-lebanon/" class="mobile-sub" data-i18n="nav_cosmetics"><span class="dot"></span>Cosmetic Packaging</a>
+            <a href="/industries/luxury-packaging-printing-lebanon/" class="mobile-sub" data-i18n="nav_luxury"><span class="dot"></span>Luxury Packaging</a>
+            <a href="/industries/book-publishing-printing-lebanon/" class="mobile-sub" data-i18n="nav_book"><span class="dot"></span>Book &amp; Publishing</a>
+            <a href="/industries/security-printing-lebanon/" class="mobile-sub" data-i18n="nav_security"><span class="dot"></span>Security Printing</a>
+          </div>
+        </div>
+      </div>
+      <a href="/the-shop/" class="mobile-link" data-close-mobile data-i18n="nav_shop">The Shop</a>
+      <a href="/#whatwedo" class="mobile-link" data-close-mobile data-i18n="nav_aboutUs">About Us</a>
+      <button class="mobile-btn" data-i18n="nav_contact" data-scroll="getintouch">Contact</button>
+    </nav>
+    <div class="mobile-foot">
+      <a href="/#quoterequest" class="req" data-cta="Request a Quote" data-page="Mobile Nav" data-close-mobile data-i18n="nav_requestQuote" data-open-quote-modal>Request a Quote</a>
+      <a href="https://wa.me/96170425152" target="_blank" rel="noopener noreferrer" class="wa" data-close-mobile data-i18n="nav_whatsApp">WhatsApp Us</a>
+      <div class="lang-switcher mobile-lang"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="fr">FR</button><button class="lang-btn" data-lang="ar">AR</button></div>
+      <p class="addr" data-i18n="nav_address">Street 41, Mekalles, Beirut · +961 1 685 354</p>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero" style="height:50vh;min-height:360px;">
+      <div class="hero-bg active" style="background-image:url('/assets/shop-hero-factory-BQjfA0Xd.jpg')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content-wrap">
+        <div class="hero-inner">
+          <div class="hero-text hero-anim">
+            <span class="hero-label" data-i18n="hero_shop_label">02 — Products</span>
+            <h1 class="hero-title" data-i18n="hero_shop_title">The Shop</h1>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bar"></div>
+      <div class="hero-bar-glow"></div>
+    </section>
+
+    <div class="page page-light">
+      <section class="shop-section">
+        <div class="container-2xl">
+          <div id="productsGrid"></div>
+        </div>
+      </section>
+
+      <!-- YOUR EXACT CTA -->
+      <section style="text-align:center;padding:64px 0;border-top:1px solid #e5e7eb;background:#fafafa;">
+        <div class="container-2xl">
+          <div class="accent-rule" style="margin:0 auto 24px;"></div>
+          <h2 style="font-size:24px;font-weight:700;color:#111827;margin-bottom:16px;" data-i18n="shop_customOrders">Custom orders welcome</h2>
+          <p style="color:#6b7280;font-size:14px;max-width:28rem;margin:0 auto 32px;" data-i18n="shop_customOrdersDesc">Can't find what you're looking for? Contact us for custom printing and packaging.</p>
+          <a href="/#quoterequest" class="btn-accent" data-cta="Shop Contact" data-page="The Shop" data-contact="email" data-i18n="shop_contactUs">Contact Us</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- YOUR EXACT FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/"><img width="440" height="508" decoding="async" class="footer-logo" src="/assets/logo--CUOgtlr.png" alt="Aleph" /></a>
+          <p class="footer-about" data-i18n="footer_about">One of Lebanon's first printing houses, founded in 1972. Based in Mekalles, Beirut.</p>
+          <div class="footer-socials">
+            <a class="footer-social" href="https://www.linkedin.com/company/aleph-printing-and-graphics/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="footer-social" href="https://www.facebook.com/Aleph.com.lb" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="footer-social" href="https://www.instagram.com/alephpaper/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a class="footer-social" href="https://www.behance.net/alephgraphics" target="_blank"><i class="fa-brands fa-behance"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-h4" data-i18n="footer_quickLinks">Quick Links</h4>
+          <ul><li><a href="/the-printing-press/" data-i18n="footer_printingPress">The Printing Press</a></li><li><a href="/our-work/" data-i18n="footer_ourWork">Our Work</a></li><li><a href="/the-shop/" data-i18n="footer_shop">The Shop</a></li><li><a href="/#quoterequest" data-i18n="footer_getInTouch">Get in Touch</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-h4" data-i18n="footer_industries">Industries</h4>
+          <ul>
+            <li><a href="/industries/pharmaceutical-printing-lebanon/" data-i18n="footer_pharma">Pharmaceutical Printing</a></li>
+            <li><a href="/industries/food-packaging-printing-lebanon/" data-i18n="footer_food">Food Packaging</a></li>
+            <li><a href="/industries/cosmetic-packaging-printing-lebanon/" data-i18n="footer_cosmetics">Cosmetic Packaging</a></li>
+            <li><a href="/industries/luxury-packaging-printing-lebanon/" data-i18n="footer_luxury">Luxury Packaging</a></li>
+            <li><a href="/industries/book-publishing-printing-lebanon/" data-i18n="footer_book">Book &amp; Publishing</a></li>
+            <li><a href="/industries/security-printing-lebanon/" data-i18n="footer_security">Security Printing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4 class="footer-h4" data-i18n="footer_contact">Contact</h4>
+          <ul>
+            <li><a href="mailto:alephprint@aleph.com.lb">alephprint@aleph.com.lb</a></li>
+            <li><a href="tel:+9611685354">+961 1 685 354 / 5</a></li>
+            <li><a href="https://wa.me/96170425152" target="_blank">+961 70 425 152 (WhatsApp)</a></li>
+            <li class="muted">Street 41, Mekalles, Beirut</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-policies">
+          <a href="/privacy-policy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="/refund-policy/" data-i18n="footer_refund">Refund Policy</a>
+          <a href="/shipping-policy/" data-i18n="footer_shipping">Shipping Policy</a>
+          <a href="/terms-of-services/" data-i18n="footer_terms">Terms of Services</a>
+        </div>
+        <p class="footer-copy" data-i18n="footer_copyright">© <span id="footerYear"></span> Aleph Printing &amp; Graphics · All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Toast container -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<!-- Cart FAB & Drawer -->
+<button class="cart-fab" id="cartFab" data-i18n-aria="shop_viewCart" aria-label="View cart"><i class="fa-solid fa-bag-shopping"></i><span class="cnt" id="cartCnt" hidden>0</span></button>
+<div class="cart-veil" id="cartVeil"></div>
+<div class="cart-drawer" id="cartDrawer"><div class="cart-hd"><h2 data-i18n="cart_yourCart"><i class="fa-solid fa-bag-shopping"></i> Your Cart</h2><button class="cart-x" id="cartX"><i class="fa-solid fa-xmark"></i></button></div><div class="cart-body" id="cartBody"></div><div class="cart-ft"><div class="subtotal-row"><span class="lbl" data-i18n="cart_subtotal">Subtotal</span><span class="val" id="cartSubtotal">$0</span></div><div class="cod-pill"><i class="fa-solid fa-money-bill-wave"></i><span data-i18n="cart_cod">Cash on delivery</span></div><button class="btn-checkout" id="btnCheckout" data-i18n="cart_checkout" disabled>Proceed to Checkout</button></div></div>
+
+<!-- Product Modal -->
+<div class="pm-veil" id="pmVeil"><div class="pm-box" id="pmBox"><button class="pm-x" id="pmX"><i class="fa-solid fa-xmark"></i></button><div class="pm-img-wrap"><img loading="lazy" decoding="async" alt="Aleph product photo" id="pmImg" src=""/><div class="pm-num" id="pmNum"></div></div><div class="pm-body"><div class="pm-cat" id="pmCat"></div><h2 class="pm-title" id="pmTitle"></h2><div class="pm-price" id="pmPrice"></div><p class="pm-desc" id="pmDesc"></p><div id="pmVariants"></div><div class="pm-qty-row"><button class="pm-qbtn" id="pmMinus">−</button><span class="pm-qval" id="pmQval">1</span><button class="pm-qbtn" id="pmPlus">+</button></div><button class="btn-pm-add" id="pmAddBtn" data-i18n="pm_addToCart">Add to Cart</button></div></div></div>
+
+<!-- Checkout Modal -->
+<div class="co-veil" id="coVeil">
+  <div class="co-box">
+    <button class="co-x" id="coX" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+
+    <div id="coFormWrap">
+      <!-- Dark header: order summary -->
+      <div class="co-hd">
+        <div class="co-hd-top">
+          <div class="co-hd-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <div>
+            <h2 class="co-hd-title" data-i18n="form_placeOrder">Place Your Order</h2>
+            <p class="co-hd-sub">Review your items and confirm delivery</p>
+          </div>
+        </div>
+        <div id="coSummary" class="co-summary"></div>
+        <div class="co-total-row">
+          <span>Total</span>
+          <span id="coTotal" class="co-total-val">0 USD</span>
+        </div>
+      </div>
+
+      <!-- Form body -->
+      <div class="co-body">
+        <form id="coForm">
+          <input type="hidden" name="access_key" id="coKey"/>
+          <input type="hidden" name="order_details" id="coOrderDetails"/>
+          <div class="co-fields-row">
+            <div class="co-field">
+              <label data-i18n="form_fullName">Full Name</label>
+              <input id="coName" name="name" placeholder="Your full name" required/>
+            </div>
+            <div class="co-field">
+              <label data-i18n="form_phone">Phone</label>
+              <input id="coPhone" name="phone" placeholder="+961 3 …" required/>
+            </div>
+          </div>
+          <div class="co-field">
+            <label data-i18n="form_email">Email</label>
+            <input id="coEmail" name="email" type="email" placeholder="you@example.com" required/>
+          </div>
+          <div class="co-field">
+            <label data-i18n="form_address">Delivery Address</label>
+            <textarea id="coAddr" name="address" rows="3" placeholder="Building, street, area, city…" required></textarea>
+          </div>
+          <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off"/></div>
+          <button type="submit" class="btn-order" id="btnOrder" data-i18n="form_confirmOrder">
+            <i class="fa-solid fa-check"></i> Confirm Order
+          </button>
+          <div class="err-note" id="coErr"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success state -->
+    <div class="success-panel" id="coSuccess">
+      <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 data-i18n="order_received">Order Received!</h3>
+      <p data-i18n="order_confirmMsg">We'll confirm by phone or WhatsApp.</p>
+      <button class="btn-success-close" onclick="document.getElementById('coVeil').classList.remove('on');document.body.style.overflow='';">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// ⚠️ EDIT YOUR PRODUCTS HERE ⚠️
+// ============================================================
+const WEB3FORMS_KEY = "6650b1b6-76e5-42bf-9192-0bdacd794f4b";
+// Bot protection via honeypot + timing (no captcha)
+const CURRENCY = "USD";
+
+const CATS = [
+  { id: "notebooks", label: "Notebooks",       img: "/images/shop/Planner.jpg" },
+  { id: "origami",   label: "Origami",         img: "/images/shop/Bascetta.jpg" },
+  { id: "cards",     label: "Playing Cards",   img: "/images/shop/cards.png" },
+  { id: "edition",   label: "Edition Aleph",   img: "/images/shop/Emir.jpg" },
+  { id: "soap",      label: "Naturalust Soap", img: "/images/shop/soap16.jpg" },
+];
+
+const PRODUCTS = [
+  { id: "soap-4pct", cat: "soap", num: "01", name: "Naturalust Soap 4%", img: "/images/shop/soap4.jpg", price: 3, cardDesc: "Traditional Lebanese laurel soap — cold-processed, all-natural.", desc: "Naturalust promotes using more natural products and less chemicals as our skin absorbs what you put on it. Naturally plant based, this soap is made with a mix of olive and laurel oil, it has detoxing properties and has been dermatologically tested. It minimizes the appearance of skin imperfections and provides a healthy looking skin. The rich, soft nourishing lather that moisturize, soothe, repair and protect normal to sensitive skins. Subtle musky scent of green laurel - Hand made from a two thousand years old recipe - Each soap has been aged for 9 to 12 months - Believed to have healing properties - Eco-friendly - Vegan - Sustainable - No animal testing - Ingredients: Olive Oil, Laurel Oil, Sodium Hydroxide, Water - 4% laurel oil ratio to olive oil", variants: null },
+  { id: "soap-8pct", cat: "soap", num: "02", name: "Naturalust Soap 8%", img: "/images/shop/soap8.jpg", price: 4, cardDesc: "Traditional Lebanese laurel soap — cold-processed, all-natural.", desc: "Naturalust promotes using more natural products and less chemicals as our skin absorbs what you put on it. Naturally plant based, this soap is made with a mix of olive and laurel oil, it has detoxing properties and has been dermatologically tested. It minimizes the appearance of skin imperfections and provides a healthy looking skin. The rich, soft nourishing lather that moisturize, soothe, repair and protect normal to sensitive skins. Subtle musky scent of green laurel - Hand made from a two thousand years old recipe - Each soap has been aged for 9 to 12 months - Believed to have healing properties - Eco-friendly - Vegan - Sustainable - No animal testing - Ingredients: Olive Oil, Laurel Oil, Sodium Hydroxide, Water - 8% laurel oil ratio to olive oil", variants: null },
+  { id: "soap-16pct", cat: "soap", num: "03", name: "Naturalust Soap 16%", img: "/images/shop/soap16.jpg", price: 5, cardDesc: "Traditional Lebanese laurel soap — cold-processed, all-natural.", desc: "Naturalust promotes using more natural products and less chemicals as our skin absorbs what you put on it. Naturally plant based, this soap is made with a mix of olive and laurel oil, it has detoxing properties and has been dermatologically tested. It minimizes the appearance of skin imperfections and provides a healthy looking skin. The rich, soft nourishing lather that moisturize, soothe, repair and protect normal to sensitive skins. Subtle musky scent of green laurel - Hand made from a two thousand years old recipe - Each soap has been aged for 9 to 12 months - Believed to have healing properties - Eco-friendly - Vegan - Sustainable - No animal testing - Ingredients: Olive Oil, Laurel Oil, Sodium Hydroxide, Water - 8% laurel oil ratio to olive oil", variants: null },
+  { id: "notebook-planner", cat: "notebooks", num: "04", name: "The Planner", img: "/images/shop/Planner.jpg", price: 5, cardDesc: "Perfect-bound A5 notebook with ruled pages and Aleph mark.", desc: "Dotted layout, notebook size: 16.5x23.5 cm\nPaper: Wood free premium 90 gsm\nCover: Fabriano - Elle Erre, Nero 220 gsm\nPaper Color: White\nPaper Weight: Medium\nTexture: Smooth\nLayout:Dotted\nEach dot is separated by 0.5 cm for easy scaling", badge: null, variants: null },
+  { id: "notebook-creative", cat: "notebooks", num: "05", name: "The Creative", img: "/images/shop/Creative.jpg", price: 5, cardDesc: "Perfect-bound A5 notebook with ruled pages and Aleph mark.", desc: "Plain layout, notebook size: 16.5x23.5 cm\nPaper: Wood free chamois 120 gsm\nCover: Fabriano - Elle Erre, Marrone 220 gsm\nPaper Color: Off White\nPaper Weight: Thick\nTexture: Authentic\nLayout:Plain\nSuitable for Fountain pen,water color...", badge: null, variants: null },
+  { id: "notebook-researcher", cat: "notebooks", num: "06", name: "The Researcher", img: "/images/shop/Researcher.jpg", price: 5, cardDesc: "Perfect-bound A5 notebook with ruled pages and Aleph mark.", desc: "Line whith margin layout, notebook size: 16.5x23.5 cm\nPaper: Wood free premium 90 gsm\nCover: Fabriano - Elle Erre, Blue 220 gsm\nPaper Color: White\nPaper Weight: Medium\nTexture: Smooth\nLayout:Lines with margins\nGreat for calligraphy and taking notes.", badge: null, variants: null },
+  { id: "notebook-writer", cat: "notebooks", num: "07", name: "The Writer", img: "/images/shop/Writer.jpg", price: 5, cardDesc: "Perfect-bound A5 notebook with ruled pages and Aleph mark.", desc: "Ruled layout, notebook size: 16.5x23.5 cm\nPaper: Fabriano Offset 80 gsm\nCover: Fabriano - Elle Erre, Ciliegia 220 gsm\nPaper Color: Off White\nPaper Weight: Light\nTexture: Smooth\nLayout:Ruled\nFits a lot of text.", badge: null, variants: null },
+  { id: "notebook-entrepreneur", cat: "notebooks", num: "08", name: "The Entrepreneur", img: "/images/shop/Entrepreneur.jpg", price: 5, cardDesc: "Perfect-bound A5 notebook with ruled pages and Aleph mark.", desc: "Square grid layout, notebook size: 16.5x23.5 cm\nPaper: Wood free premium 90 gsm\nCover: Fabriano - Elle Erre, Ferro 220 gsm\nPaper Color: White\nPaper Weight: Medium\nTexture: Smooth\nLayout:Square Grid\nPrevalent design to write,draw,calculate...", badge: null, variants: null },
+  { id: "origami-small", cat: "origami", num: "09", name: "Wine Bags", img: "/images/shop/winebags.png", price: 3, cardDesc: "Available in different colors", desc: "Inspired by geometric paper folding. Printed on heavy-weight uncoated stock.", badge: null, variants: null },
+  { id: "origami-bascetta", cat: "origami", num: "10", name: "Bascetta Star", img: "/images/shop/Bascetta.jpg", price: 5, cardDesc: "Available in different colors", desc: "Spacious yet sculptural. Perfect for fashion, confectionery, or premium gifts.", badge: null, variants: null },
+  { id: "origami-heart", cat: "origami", num: "11", name: "Origami Heart", img: "/images/shop/heart.jpg", price: 5, cardDesc: "Beginner Level | 2 Hours Needed", desc: "Custom sizes, finishes, and branding available for wholesale orders.", badge: null, variants: null },
+  { id: "origami-squirrel", cat: "origami", num: "12", name: "Origami Squirrel", img: "/images/shop/squirrel.jpg", price: 15, cardDesc: "Intermediate Level | 8 Hours Needed", desc: "Custom sizes, finishes, and branding available for wholesale orders.", badge: null, variants: null },
+  { id: "origami-direwolf", cat: "origami", num: "13", name: "Origami Dire-Wolf", img: "/images/shop/direwolf.jpg", price: 25, cardDesc: "Advanced Level | 12 Hours Needed", desc: "Custom sizes, finishes, and branding available for wholesale orders.", badge: null, variants: null },
+  { id: "origami-bison", cat: "origami", num: "14", name: "Origami Bison-Skull", img: "/images/shop/bison.jpg", price: 30, cardDesc: "Expert Level | 16 Hours Needed", desc: "Custom sizes, finishes, and branding available for wholesale orders.", badge: null, variants: null },
+  { id: "cards-beirut", cat: "cards", num: "15", name: "Illustrated Playing Cards", img: "/images/shop/cards.png", price: 5, cardDesc: "Illustrated playing cards.", desc: "You might not know it but this deck of cards has a story. In 2020, a major financial collapse led the Lebanese economy to shambles. Lebanese people were very affected by the loss of their capital and a lot of people flee the country for better opportunities abroad. Aleph printing press decided to launch a design competition to whom could better represent the Lebanon that we care for. Karen Khodur was the winner of the competition and this is her design illustrated here.", badge: null, variants: null },
+  { id: "Emir", cat: "edition", num: "16", name: "AU TEMPS DE L’ÉMIR", img: "/images/shop/Emir.jpg", price: 35, cardDesc: "Contes et nouvelles de l'histoire du Liban - Fouad Ephram Al-Boustany", desc: "Contes et nouvelles de l'histoire du Liban - Fouad Ephram Al-Boustany", badge: null, variants: null },
+   { id: "Tripoli", cat: "edition", num: "17", name: "Tripoli – A Travers Les Ages", img: "/images/shop/Tripoli.jpg", price: 35, cardDesc: "Nina Jidejian", desc: "Nina Jidejian", badge: null, variants: null },
+   { id: "Sidon", cat: "edition", num: "18", name: "Sidon", img: "/images/shop/Sidon.jpg", price: 35, cardDesc: "Nina Jidejian", desc: "Nina Jidejian", badge: null, variants: null },
+   { id: "Jesus1", cat: "edition", num: "19", name: "عجائب الرب يسوع المسيح", img: "/images/shop/Jesus1.jpg", price: 5, cardDesc: "كلمة وأيقونة - الجزء الأول - الاب اسبيريدون ميشيل فيّاض", desc: "كلمة وأيقونة - الجزء الأول - الاب اسبيريدون ميشيل فيّاض", badge: null, variants: null },
+  { id: "Lamer", cat: "edition", num: "20", name: "Le Liban et la Mer", img: "/images/shop/Lamer.jpg", price: 20, cardDesc: "Joumana Arab Jamhour", desc: "Joumana Arab Jamhour", badge: null, variants: null },
+  { id: "EmileEdde", cat: "edition", num: "21", name: "Les Phéniciens ont-ils découvert L’Amérique", img: "/images/shop/EmileEdde.jpg", price: 20, cardDesc: "Emile Edde", desc: "Les Phéniciens sont-ils arrivés en Amérique ? Bien sûr ! Ils y sont allés, et en sont revenus, durant des centaines d’années. C’était leur métier. Comment ont-ils fait ? Exactement comme Pedro Cabral : Sans faire exprès, la première fois grâce aux courant marins.", badge: null, variants: null },
+];
+
+// ============================================================
+// SHOP LOGIC (unchanged)
+// ============================================================
+let cart = [], curProd = null, curQty = 1, curVars = {};
+
+function catLabel(id){ return (CATS.find(c=>c.id===id)||{label:id}).label; }
+function showToast(msg, icon){
+  const w=document.getElementById("toastWrap");
+  const t=document.createElement("div"); t.className="toast";
+  t.innerHTML=`<i class="fa-solid ${icon||'fa-check-circle'}"></i> ${msg}`;
+  w.appendChild(t);
+  setTimeout(()=>{ t.classList.add("out"); setTimeout(()=>{ if(t.parentNode) t.remove(); }, 350); }, 2800);
+}
+function cardHTML(p,i){
+  return `<div class="pcard" data-id="${p.id}" style="transition-delay:${i*50}ms">${p.badge?`<span class="pcard-badge ${p.badge}">${p.badge==="new"?i18n.t("shop_badgeNew"):i18n.t("shop_badgeSoldOut")}</span>`:""}<div class="pcard-img"><img loading="lazy" decoding="async" src="${p.img}" alt="${p.name}" onerror="this.src='https://placehold.co/600x450/f3f4f6/6b7280?text=${encodeURIComponent(p.name)}'"></div><div class="pcard-body"><h3 class="pcard-name">${p.name}</h3><p class="pcard-desc">${p.cardDesc}</p><div class="pcard-footer"><div class="pcard-price">${p.price?p.price+`<span class="cur"> ${CURRENCY}</span>`:i18n.t("shop_inquire")}</div><button class="btn-shop-add" data-id="${p.id}"><i class="fa-solid fa-bag-shopping"></i> ${i18n.t("shop_add")}</button></div></div></div>`;
+}
+function renderGrid(){
+  const g = document.getElementById("productsGrid");
+  g.innerHTML = CATS.map(cat => {
+    const list = PRODUCTS.filter(p => p.cat === cat.id);
+    if (!list.length) return '';
+    return `<div class="cat-section">
+      <div class="cat-section-hd">
+        <div class="cat-section-img"><img loading="lazy" decoding="async" src="${cat.img}" alt="${cat.label}"></div>
+        <div class="cat-section-meta">
+          <h2 class="cat-section-title">${cat.label}</h2>
+          <span class="cat-section-count">${list.length} item${list.length>1?'s':''}</span>
+        </div>
+      </div>
+      <div class="cat-products-grid">${list.map((p,i)=>cardHTML(p,i)).join('')}</div>
+    </div>`;
+  }).join('');
+  let delay = 0;
+  g.querySelectorAll(".pcard").forEach(c => {
+    setTimeout(()=>c.classList.add("show"), delay);
+    delay += 50;
+    c.addEventListener("click", e => { if(!e.target.closest(".btn-shop-add")) openPM(c.dataset.id); });
+  });
+  g.querySelectorAll(".btn-shop-add").forEach(btn => btn.addEventListener("click", e => {
+    e.stopPropagation();
+    const p = PRODUCTS.find(x=>x.id===btn.dataset.id);
+    if(p) addToCart(p,1,{});
+  }));
+}
+function addToCart(p,qty,vars){
+  const key=JSON.stringify(vars); let ex=cart.find(i=>i.id===p.id&&JSON.stringify(i.vars)===key);
+  if(ex) ex.qty+=qty; else cart.push({id:p.id,name:p.name,img:p.img,price:p.price,qty,vars});
+  updateCart();
+  showToast(`${p.name} ${i18n.t("shop_addedToast")}`, "fa-check-circle");
+}
+function updateCart(){
+  const total = cart.reduce((s,i)=>s+i.qty,0);
+  const cnt = document.getElementById("cartCnt");
+  if(total>0){ cnt.textContent=total>99?"99+":total; cnt.hidden=false; } else cnt.hidden=true;
+  const body = document.getElementById("cartBody");
+  if(!cart.length){ body.innerHTML='<div class="cart-empty"><i class="fa-solid fa-bag-shopping"></i><p data-i18n="shop_emptyCart">Your cart is empty</p></div>'; document.getElementById("btnCheckout").disabled=true; document.getElementById("cartSubtotal").textContent="$0"; return; }
+  document.getElementById("btnCheckout").disabled=false;
+  let sub=0;
+  body.innerHTML=cart.map((it,i)=>{ const lp=it.price!==null?it.price*it.qty:null; if(lp!==null) sub+=lp; return `<div class="citem"><img loading="lazy" decoding="async" src="${it.img}" alt="${it.name}"><div class="citem-info"><h4>${it.name}</h4><div class="citem-row"><button class="qbtn" data-i="${i}" data-a="dec">−</button><span class="qval">${it.qty}</span><button class="qbtn" data-i="${i}" data-a="inc">+</button></div></div><div class="citem-lp">${lp!==null?lp+" "+CURRENCY:"Inquire"}</div><button class="rm-btn" data-i="${i}"><i class="fa-solid fa-trash-can"></i></button></div>`; }).join("");
+  document.getElementById("cartSubtotal").textContent = sub+" "+CURRENCY;
+  body.querySelectorAll(".qbtn").forEach(b=>b.addEventListener("click",()=>{ let i=+b.dataset.i; if(b.dataset.a==="inc") cart[i].qty++; else { cart[i].qty--; if(cart[i].qty<=0) cart.splice(i,1); } updateCart(); }));
+  body.querySelectorAll(".rm-btn").forEach(b=>b.addEventListener("click",()=>{ cart.splice(+b.dataset.i,1); updateCart(); }));
+}
+function openCart(){ document.getElementById("cartVeil").classList.add("on"); document.getElementById("cartDrawer").classList.add("on"); document.body.style.overflow="hidden"; }
+function closeCart(){ document.getElementById("cartVeil").classList.remove("on"); document.getElementById("cartDrawer").classList.remove("on"); document.body.style.overflow=""; }
+document.getElementById("cartFab").addEventListener("click",openCart);
+document.getElementById("cartX").addEventListener("click",closeCart);
+document.getElementById("cartVeil").addEventListener("click",closeCart);
+function openPM(id){
+  const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+  curProd=p; curQty=1; curVars={};
+  document.getElementById("pmImg").src=p.img;
+  document.getElementById("pmNum").textContent=p.num||"";
+  document.getElementById("pmNum").style.display=p.num?"":"none";
+  document.getElementById("pmCat").textContent=catLabel(p.cat);
+  document.getElementById("pmTitle").textContent=p.name;
+  document.getElementById("pmDesc").innerHTML=p.desc.replace(/\n/g,"<br>");
+  const pe=document.getElementById("pmPrice");
+  if(p.price!==null){ pe.className="pm-price"; pe.innerHTML=`${p.price}<span class="cur"> ${CURRENCY}</span>`; }
+  else { pe.className="pm-price inquire"; pe.textContent=i18n.t("shop_contactPricing"); }
+  const vw=document.getElementById("pmVariants"); vw.innerHTML="";
+  (p.variants||[]).forEach(g=>{
+    const d=document.createElement("div"); d.className="var-grp";
+    d.innerHTML=`<div class="var-lbl">${g.label}</div><div class="var-opts"></div>`;
+    const ow=d.querySelector(".var-opts");
+    g.options.forEach((opt,i)=>{
+      const name=typeof opt==="string"?opt:opt.name;
+      const ok=typeof opt==="string"?true:opt.ok!==false;
+      const b=document.createElement("button"); b.className="vchip"+(ok?"":" na");
+      b.textContent=name; b.disabled=!ok;
+      if(ok && i===0){ b.classList.add("on"); curVars[g.label]=name; }
+      b.addEventListener("click",()=>{ ow.querySelectorAll(".vchip").forEach(c=>c.classList.remove("on")); b.classList.add("on"); curVars[g.label]=name; });
+      ow.appendChild(b);
+    });
+    vw.appendChild(d);
+  });
+  document.getElementById("pmQval").textContent=1;
+  const ab=document.getElementById("pmAddBtn"); ab.classList.remove("done"); ab.disabled=p.badge==="sold-out"; ab.innerHTML=p.badge==="sold-out"?i18n.t("shop_outOfStock"):"<i class='fa-solid fa-bag-shopping'></i> "+i18n.t("shop_addToCart");
+  document.getElementById("pmVeil").classList.add("on"); document.body.style.overflow="hidden";
+}
+function closePM(){ document.getElementById("pmVeil").classList.remove("on"); document.body.style.overflow=""; curProd=null; }
+document.getElementById("pmX").addEventListener("click",closePM);
+document.getElementById("pmVeil").addEventListener("click",e=>{ if(e.target===document.getElementById("pmVeil")) closePM(); });
+document.getElementById("pmMinus").addEventListener("click",()=>{ if(curQty>1){ curQty--; document.getElementById("pmQval").textContent=curQty; } });
+document.getElementById("pmPlus").addEventListener("click",()=>{ curQty++; document.getElementById("pmQval").textContent=curQty; });
+document.getElementById("pmAddBtn").addEventListener("click",()=>{ if(curProd){ addToCart(curProd,curQty,{...curVars}); const b=document.getElementById("pmAddBtn"); b.classList.add("done");   b.innerHTML="<i class='fa-solid fa-check'></i> "+i18n.t("shop_added"); setTimeout(()=>{ closePM(); openCart(); }, 700); } });
+document.getElementById("btnCheckout").addEventListener("click",()=>{ closeCart(); openCO(); });
+function openCO(){
+  document.getElementById("coKey").value = WEB3FORMS_KEY;
+  document.getElementById("coOrderDetails").value = cart.map(it=>`${it.name} × ${it.qty}`).join(" | ");
+  document.getElementById("coForm").reset();
+  document.getElementById("coErr").classList.remove("on");
+  document.getElementById("coFormWrap").style.display = "";
+  document.getElementById("coSuccess").style.display = "none";
+  // Populate order summary in the dark header
+  let total = 0;
+  document.getElementById("coSummary").innerHTML = cart.map(it => {
+    const lp = it.price !== null ? it.price * it.qty : null;
+    if(lp) total += lp;
+    return `<div class="co-sitem"><img loading="lazy" decoding="async" src="${it.img}" alt="${it.name}"><span class="co-sitem-name">${it.name}</span><span class="co-sitem-qty">×${it.qty}</span><span class="co-sitem-price">${lp !== null ? lp + ' ' + CURRENCY : 'Inquire'}</span></div>`;
+  }).join('');
+  document.getElementById("coTotal").textContent = total + ' ' + CURRENCY;
+  // Set bot timestamp
+  document.getElementById("coForm").dataset.botTime = Date.now();
+  document.getElementById("coVeil").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function closeCO(){ document.getElementById("coVeil").classList.remove("on"); document.body.style.overflow=""; }
+document.getElementById("coX").addEventListener("click",closeCO);
+document.getElementById("coVeil").addEventListener("click",e=>{ if(e.target===document.getElementById("coVeil")) closeCO(); });
+document.getElementById("coForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  document.getElementById("coErr").classList.remove("on");
+  // Bot check: honeypot + timing
+  const honey = this.querySelector('[name="_honey"]');
+  if(honey && honey.value){
+    document.getElementById("coErr").textContent = "Submission rejected.";
+    document.getElementById("coErr").classList.add("on");
+    return;
+  }
+  const bt = Number(this.dataset.botTime);
+  if(bt && Date.now() - bt < 3000){
+    document.getElementById("coErr").textContent = "Please wait a moment before submitting.";
+    document.getElementById("coErr").classList.add("on");
+    return;
+  }
+  const btn = document.getElementById("btnOrder");
+  btn.disabled = true;
+  btn.innerHTML = `<i class='fa-solid fa-spinner fa-spin'></i> Placing order…`;
+  const fd = new FormData(this);
+  fd.set("message", `ORDER:\n${document.getElementById("coOrderDetails").value}\nADDRESS:\n${document.getElementById("coAddr").value}`);
+  try{
+    const r = await fetch("https://api.web3forms.com/submit", { method:"POST", body:fd });
+    const d = await r.json();
+    if(d.success){
+      document.getElementById("coFormWrap").style.display = "none";
+      document.getElementById("coSuccess").style.display = "flex";
+      cart = []; updateCart();
+      if(window.gtag) window.gtag("event","purchase");
+    } else throw new Error();
+  } catch(err){
+    document.getElementById("coErr").textContent = i18n.t("shop_orderError");
+    document.getElementById("coErr").classList.add("on");
+  } finally{
+    btn.disabled = false;
+    btn.innerHTML = `<i class="fa-solid fa-check"></i> ${i18n.t("form_confirmOrder")}`;
+    this.dataset.botTime = Date.now();
+  }
+});
+document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+function initShop() {
+  if (window.i18n) {
+    renderGrid(); updateCart();
+  } else {
+    setTimeout(initShop, 50);
+  }
+}
+initShop();
+</script>
+</body>
+</html>

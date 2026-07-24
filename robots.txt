@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+Disallow: /aleph_system/
+Disallow: /crm/
+Disallow: /uploads/
+
+# AI / GEO crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Cohere
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://aleph.com.lb/sitemap.xml
