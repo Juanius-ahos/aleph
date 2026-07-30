@@ -13,7 +13,7 @@
   <link rel="alternate" hreflang="x-default" href="https://aleph.com.lb/blog/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Blog | Aleph Printing &amp; Graphics" />
-  <meta property="og:description" content="Insights, guides, and news from Aleph Printing &amp; Graphics — Lebanon's premier printing house since 1972." />
+  <meta property="og:description" content="Insights, guides, and news from Aleph Printing &amp; Graphics." />
   <meta property="og:url" content="https://aleph.com.lb/blog/" />
   <meta property="og:image" content="https://aleph.com.lb/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="Aleph Printing &amp; Graphics" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blog | Aleph Printing &amp; Graphics" />
-  <meta name="twitter:description" content="Insights, guides, and news from Aleph Printing &amp; Graphics — Lebanon's premier printing house since 1972." />
+  <meta name="twitter:description" content="Insights, guides, and news from Aleph Printing &amp; Graphics." />
   <meta name="twitter:image" content="https://aleph.com.lb/og-image.jpg" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
@@ -37,13 +37,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHZ7HY8NXR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FHZ7HY8NXR', { page_location: window.location.href, page_title: document.title });
-    window.gtag = gtag;
-  </script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-FHZ7HY8NXR',{page_location:window.location.href,page_title:document.title}); window.gtag=gtag;</script>
   <script type="module" crossorigin src="/assets/app-BMUD5HRh.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/app-CAbQuvFe.css">
 <script type="application/ld+json">
@@ -72,35 +66,40 @@
 }
 </script>
 <style>
-.blog-hero { padding:100px 0 60px; text-align:center; }
-.blog-hero h1 { font-size:2.8rem; font-weight:700; margin:0 0 12px; }
-.blog-hero p { color:#999; font-size:1.1rem; max-width:600px; margin:0 auto; }
-.blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:32px; padding:0 0 80px; }
-.blog-card { background:#111; border-radius:16px; overflow:hidden; border:1px solid #222; transition:transform .3s,border-color .3s; }
-.blog-card:hover { transform:translateY(-4px); border-color:#f25424; }
+.blog-head { padding:80px 0 48px; }
+.blog-eyebrow { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.blog-eyebrow .rule { flex:0 0 40px; height:2px; background:#f25424; }
+.blog-eyebrow .text { font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:#f25424; }
+.blog-head h1 { font-size:2.6rem; font-weight:700; margin:0 0 12px; line-height:1.2; }
+.blog-head p { color:#999; font-size:1.05rem; max-width:600px; line-height:1.7; }
+.blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:28px; padding:0 0 80px; }
+.blog-card { background:#111; border-radius:16px; overflow:hidden; border:1px solid #222; transition:transform .35s cubic-bezier(.4,0,.2,1),border-color .3s; }
+.blog-card:hover { transform:translateY(-5px); border-color:#f25424; }
 .blog-card-img { width:100%; height:200px; object-fit:cover; display:block; background:#1a1a1a; }
 .blog-card-body { padding:24px; }
-.blog-card-tag { display:inline-block; font-size:.75rem; font-weight:600; color:#f25424; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px; }
-.blog-card-title { font-size:1.15rem; font-weight:600; margin:0 0 8px; line-height:1.4; }
+.blog-card-tag { display:inline-block; font-size:.7rem; font-weight:700; color:#f25424; text-transform:uppercase; letter-spacing:.1em; margin-bottom:8px; }
+.blog-card-title { font-size:1.1rem; font-weight:600; margin:0 0 8px; line-height:1.35; }
 .blog-card-title a { color:#fff; text-decoration:none; }
 .blog-card-title a:hover { color:#f25424; }
-.blog-card-excerpt { color:#888; font-size:.9rem; line-height:1.6; margin:0 0 16px; }
-.blog-card-meta { font-size:.8rem; color:#666; display:flex; align-items:center; gap:8px; }
-.blog-card-meta .dot { width:3px; height:3px; border-radius:50%; background:#555; display:inline-block; }
-.featured-card { grid-column:1 / -1; display:grid; grid-template-columns:1fr 1fr; gap:0; }
-.featured-card .blog-card-img { height:100%; min-height:320px; }
-.featured-card .blog-card-body { display:flex; flex-direction:column; justify-content:center; padding:40px; }
-.featured-card .blog-card-title { font-size:1.6rem; }
-.back { display:inline-flex; align-items:center; gap:6px; color:#999; text-decoration:none; font-size:.9rem; margin-bottom:24px; }
+.blog-card-excerpt { color:#888; font-size:.88rem; line-height:1.65; margin:0 0 14px; }
+.blog-card-meta { font-size:.78rem; color:#555; display:flex; align-items:center; gap:8px; }
+.blog-card-meta .dot { width:3px; height:3px; border-radius:50%; background:#444; display:inline-block; }
+.featured-card { grid-column:1 / -1; display:grid; grid-template-columns:1fr 1fr; gap:0; border-color:#2a2a2a; }
+.featured-card:hover { border-color:#f25424; }
+.featured-card .blog-card-img { height:100%; min-height:300px; }
+.featured-card .blog-card-body { display:flex; flex-direction:column; justify-content:center; padding:36px 40px; }
+.featured-card .blog-card-title { font-size:1.5rem; }
+.featured-card .blog-card-excerpt { font-size:.95rem; }
+.back { display:inline-flex; align-items:center; gap:6px; color:#777; text-decoration:none; font-size:.85rem; margin-bottom:28px; }
 .back:hover { color:#f25424; }
 @media(max-width:768px) {
-  .blog-hero { padding:60px 0 40px; }
-  .blog-hero h1 { font-size:2rem; }
-  .blog-grid { grid-template-columns:1fr; gap:24px; }
+  .blog-head { padding:48px 0 32px; }
+  .blog-head h1 { font-size:1.8rem; }
+  .blog-grid { grid-template-columns:1fr; gap:20px; }
   .featured-card { grid-template-columns:1fr; }
   .featured-card .blog-card-img { min-height:200px; }
   .featured-card .blog-card-body { padding:24px; }
-  .featured-card .blog-card-title { font-size:1.3rem; }
+  .featured-card .blog-card-title { font-size:1.2rem; }
 }
 </style>
 </head>
@@ -176,23 +175,31 @@
       <div class="page page-dark">
         <div class="container">
           <a href="/" class="back">← Back to Home</a>
-          <div class="blog-hero">
+          <div class="blog-head">
+            <div class="blog-eyebrow"><span class="rule"></span><span class="text">Insights</span></div>
             <h1>The Aleph Blog</h1>
-            <p>Insights, guides, and stories from Lebanon's printing house — since 1972.</p>
+            <p>Guides, stories, and visual thinking from Lebanon's printing house — since 1972.</p>
           </div>
 
           <div class="blog-grid">
-
             <article class="blog-card featured-card">
               <img class="blog-card-img" src="/images/printing/bookprinting.jpg" alt="MENA Visual Directions 2027" loading="lazy" />
               <div class="blog-card-body">
                 <span class="blog-card-tag">Design</span>
                 <h2 class="blog-card-title"><a href="/blog/printing-costs-lebanon/">MENA Visual Directions 2027 — 10 Creative Languages Shaping the Future of Middle Eastern Design</a></h2>
-                <p class="blog-card-excerpt">Hurufiyya revival, Neo-Arabesque, Levantine nostalgia, Mediterranean minimalism — 10 visual directions redefining regional identity in branding, packaging, and print.</p>
+                <p class="blog-card-excerpt">Hurufiyya revival, Neo-Arabesque, Levantine nostalgia, Mediterranean minimalism — the visual directions redefining regional identity in branding, packaging, and print.</p>
                 <div class="blog-card-meta"><span>July 2026</span><span class="dot"></span><span>Aleph Team</span></div>
               </div>
             </article>
 
+            <article class="blog-card">
+              <div class="blog-card-body">
+                <span class="blog-card-tag">Coming Soon</span>
+                <h2 class="blog-card-title"><a href="#">More articles coming</a></h2>
+                <p class="blog-card-excerpt">New content on design, printing, packaging, and visual culture from the Aleph team.</p>
+                <div class="blog-card-meta"><span>Stay tuned</span></div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -279,121 +286,43 @@
           </div>
           <div class="qsf-step active">
             <div class="qsf-row">
-              <div class="field">
-                <label for="qm-name" data-i18n="form_yourName">Your Name</label>
-                <input id="qm-name" name="name" type="text" data-i18n-placeholder="form_fullName" placeholder="Full Name" required />
-              </div>
-              <div class="field">
-                <label for="qm-company">Company</label>
-                <input id="qm-company" name="company" type="text" placeholder="Company name" />
-              </div>
+              <div class="field"><label for="qm-name" data-i18n="form_yourName">Your Name</label><input id="qm-name" name="name" type="text" data-i18n-placeholder="form_fullName" placeholder="Full Name" required /></div>
+              <div class="field"><label for="qm-company">Company</label><input id="qm-company" name="company" type="text" placeholder="Company name" /></div>
             </div>
-            <div class="field">
-              <label for="qm-email" data-i18n="form_email">Email Address</label>
-              <input id="qm-email" name="email" type="email" data-i18n-placeholder="form_emailPlaceholder" placeholder="email@example.com" required />
-            </div>
-            <div class="field">
-              <label for="qm-phone" data-i18n="form_phone">Phone Number</label>
-              <input id="qm-phone" name="phone" type="tel" data-i18n-placeholder="form_phonePlaceholder" placeholder="+961 3 123 456" required />
-              <small class="field-hint" data-i18n="form_phoneHint">Include your country code (e.g., +961 for Lebanon)</small>
-            </div>
-            <div class="qsf-nav">
-              <span></span>
-              <button type="button" class="qsf-next" data-to="1">Next <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
+            <div class="field"><label for="qm-email" data-i18n="form_email">Email Address</label><input id="qm-email" name="email" type="email" data-i18n-placeholder="form_emailPlaceholder" placeholder="email@example.com" required /></div>
+            <div class="field"><label for="qm-phone" data-i18n="form_phone">Phone Number</label><input id="qm-phone" name="phone" type="tel" data-i18n-placeholder="form_phonePlaceholder" placeholder="+961 3 123 456" required /><small class="field-hint" data-i18n="form_phoneHint">Include your country code (e.g., +961 for Lebanon)</small></div>
+            <div class="qsf-nav"><span></span><button type="button" class="qsf-next" data-to="1">Next <i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="qsf-step">
-            <div class="field">
-              <label>Category *</label>
-              <div class="qsf-chips" data-field="category">
-                <button type="button" class="qsf-chip" data-val="books"><i class="fa-solid fa-book"></i> Books</button>
-                <button type="button" class="qsf-chip" data-val="bags"><i class="fa-solid fa-bag-shopping"></i> Bags</button>
-                <button type="button" class="qsf-chip" data-val="packaging"><i class="fa-solid fa-box"></i> Packaging</button>
-                <button type="button" class="qsf-chip" data-val="cards"><i class="fa-solid fa-id-card"></i> Cards</button>
-                <button type="button" class="qsf-chip" data-val="custom"><i class="fa-solid fa-sliders"></i> Custom</button>
-                <button type="button" class="qsf-chip" data-val="other"><i class="fa-solid fa-ellipsis"></i> Other</button>
-                <input type="hidden" name="category" value="" />
-              </div>
-            </div>
-            <div class="qsf-row">
-              <div class="field">
-                <label for="qm-quantity">Quantity *</label>
-                <input id="qm-quantity" name="quantity" type="number" min="1" placeholder="e.g. 2000" required />
-              </div>
-              <div class="field">
-                <label for="qm-size">Size / Dimensions</label>
-                <input id="qm-size" name="size" type="text" placeholder="e.g. 20 × 15 cm" />
-              </div>
-            </div>
-            <div class="qsf-cond" data-cond="books">
-              <div class="field">
-                <label for="qm-pages">Number of Pages</label>
-                <input id="qm-pages" name="pages" type="number" min="1" placeholder="e.g. 96" />
-              </div>
-            </div>
-            <div class="qsf-cond" data-cond="other">
-              <div class="field">
-                <label>Please Specify</label>
-                <input name="category_other" type="text" placeholder="What do you need?" />
-              </div>
-            </div>
-            <div class="qsf-row">
-              <div class="field">
-                <label for="qm-colors">Colors</label>
-                <input id="qm-colors" name="colors" type="text" placeholder="e.g. CMYK, Pantone, gold foil" />
-              </div>
-              <div class="field">
-                <label for="qm-material">Material</label>
-                <input id="qm-material" name="material" type="text" placeholder="e.g. 350gsm artboard, kraft" />
-              </div>
-            </div>
-            <div class="field">
-              <label>Design Ready?</label>
-              <div class="qsf-chips" data-field="design_ready">
-                <button type="button" class="qsf-chip" data-val="yes"><i class="fa-solid fa-check"></i> Yes, I have artwork</button>
-                <button type="button" class="qsf-chip" data-val="no"><i class="fa-solid fa-xmark"></i> No, need design help</button>
-                <input type="hidden" name="design_ready" value="" />
-              </div>
-            </div>
+            <div class="field"><label>Category *</label><div class="qsf-chips" data-field="category">
+              <button type="button" class="qsf-chip" data-val="books"><i class="fa-solid fa-book"></i> Books</button>
+              <button type="button" class="qsf-chip" data-val="bags"><i class="fa-solid fa-bag-shopping"></i> Bags</button>
+              <button type="button" class="qsf-chip" data-val="packaging"><i class="fa-solid fa-box"></i> Packaging</button>
+              <button type="button" class="qsf-chip" data-val="cards"><i class="fa-solid fa-id-card"></i> Cards</button>
+              <button type="button" class="qsf-chip" data-val="custom"><i class="fa-solid fa-sliders"></i> Custom</button>
+              <button type="button" class="qsf-chip" data-val="other"><i class="fa-solid fa-ellipsis"></i> Other</button>
+              <input type="hidden" name="category" value="" />
+            </div></div>
+            <div class="qsf-row"><div class="field"><label for="qm-quantity">Quantity *</label><input id="qm-quantity" name="quantity" type="number" min="1" placeholder="e.g. 2000" required /></div><div class="field"><label for="qm-size">Size / Dimensions</label><input id="qm-size" name="size" type="text" placeholder="e.g. 20 × 15 cm" /></div></div>
+            <div class="qsf-cond" data-cond="books"><div class="field"><label for="qm-pages">Number of Pages</label><input id="qm-pages" name="pages" type="number" min="1" placeholder="e.g. 96" /></div></div>
+            <div class="qsf-cond" data-cond="other"><div class="field"><label>Please Specify</label><input name="category_other" type="text" placeholder="What do you need?" /></div></div>
+            <div class="qsf-row"><div class="field"><label for="qm-colors">Colors</label><input id="qm-colors" name="colors" type="text" placeholder="e.g. CMYK, Pantone, gold foil" /></div><div class="field"><label for="qm-material">Material</label><input id="qm-material" name="material" type="text" placeholder="e.g. 350gsm artboard, kraft" /></div></div>
+            <div class="field"><label>Design Ready?</label><div class="qsf-chips" data-field="design_ready"><button type="button" class="qsf-chip" data-val="yes"><i class="fa-solid fa-check"></i> Yes, I have artwork</button><button type="button" class="qsf-chip" data-val="no"><i class="fa-solid fa-xmark"></i> No, need design help</button><input type="hidden" name="design_ready" value="" /></div></div>
             <input type="hidden" name="specs" value="" />
-            <div class="qsf-nav">
-              <button type="button" class="qsf-back" data-to="0"><i class="fa-solid fa-arrow-left"></i> Back</button>
-              <button type="button" class="qsf-next" data-to="2">Review <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
+            <div class="qsf-nav"><button type="button" class="qsf-back" data-to="0"><i class="fa-solid fa-arrow-left"></i> Back</button><button type="button" class="qsf-next" data-to="2">Review <i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="qsf-step">
             <label>Your Specifications</label>
             <div class="qsf-review"></div>
-            <div class="field">
-              <label for="qm-message">Additional Notes</label>
-              <textarea id="qm-message" name="message" rows="4" placeholder="Deadline, special finishes, references, anything else..."></textarea>
-            </div>
-            <div class="qsf-nav">
-              <button type="button" class="qsf-back" data-to="1"><i class="fa-solid fa-arrow-left"></i> Back</button>
-              <button type="submit" class="qsf-next" data-to="3"><i class="fa-solid fa-paper-plane"></i> Send Quote Request</button>
-            </div>
+            <div class="field"><label for="qm-message">Additional Notes</label><textarea id="qm-message" name="message" rows="4" placeholder="Deadline, special finishes, references, anything else..."></textarea></div>
+            <div class="qsf-nav"><button type="button" class="qsf-back" data-to="1"><i class="fa-solid fa-arrow-left"></i> Back</button><button type="submit" class="qsf-next" data-to="3"><i class="fa-solid fa-paper-plane"></i> Send Quote Request</button></div>
           </div>
-          <div class="form-note success" data-success-note style="display:none;">
-            <div class="row"><i class="fa-solid fa-circle-check"></i><p data-success-msg></p></div>
-          </div>
-          <div class="form-note error" data-error-note style="display:none;">
-            <div class="row"><i class="fa-solid fa-xmark"></i><p>Unable to send message. Please call us directly at +961 1 685 354 or WhatsApp +961 70 425 152.</p></div>
-          </div>
+          <div class="form-note success" data-success-note style="display:none;"><div class="row"><i class="fa-solid fa-circle-check"></i><p data-success-msg></p></div></div>
+          <div class="form-note error" data-error-note style="display:none;"><div class="row"><i class="fa-solid fa-xmark"></i><p>Unable to send message. Please call us directly at +961 1 685 354 or WhatsApp +961 70 425 152.</p></div></div>
         </form>
       </div>
     </div>
   </div>
-<script>
-(function(){
-  document.querySelectorAll('.contact-form').forEach(function(f){
-    f.addEventListener('submit',function(e){
-      var h=f.querySelector('[name="_honey"]');
-      if(h&&h.value){e.preventDefault();e.stopImmediatePropagation();return}
-      var t=Number(f.dataset.botTime);
-      if(t&&Date.now()-t<3000){e.preventDefault();e.stopImmediatePropagation();return}
-    },true);
-  });
-})();
-</script>
+<script>(function(){document.querySelectorAll('.contact-form').forEach(function(f){f.addEventListener('submit',function(e){var h=f.querySelector('[name="_honey"]');if(h&&h.value){e.preventDefault();e.stopImmediatePropagation();return}var t=Number(f.dataset.botTime);if(t&&Date.now()-t<3000){e.preventDefault();e.stopImmediatePropagation();return}},true);});})();</script>
 </body>
 </html>
