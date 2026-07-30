@@ -379,6 +379,18 @@ require_once __DIR__ . '/header.php';
 .pq-section-head .pq-section-num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-subtle);color:var(--primary);font-size:11px;font-weight:700;flex-shrink:0}
 .pq-help{font-size:11.5px;color:var(--gray-400);margin-top:3px;line-height:1.4}
 .pq-help strong{color:var(--gray-500)}
+/* Similar past quotes */
+.pq-similar{margin-bottom:10px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--gray-50);padding:10px 12px}
+.pq-similar .ps-head{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-500);font-weight:700;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.pq-similar .ps-close{cursor:pointer;color:var(--gray-400);border:none;background:none;font-size:16px;line-height:1}
+.ps-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px;margin-bottom:6px}
+.ps-card .ps-title{font-weight:700;font-size:12.5px;color:var(--ink)}
+.ps-card .ps-meta{font-size:11px;color:var(--gray-400);margin:1px 0 6px;line-height:1.4}
+.ps-tiers{display:flex;flex-wrap:wrap;gap:6px}
+.ps-chip{font-size:12px;font-weight:600;padding:4px 10px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);color:var(--gray-600);cursor:pointer;white-space:nowrap;transition:all .12s}
+.ps-chip:hover{border-color:var(--primary);color:var(--primary);background:var(--accent-subtle)}
+.ps-chip b{color:var(--ink)}
+.ps-empty{font-size:12.5px;color:var(--gray-400);padding:4px 0}
 @media(max-width:900px){
   #quoteForm > .detail-grid{grid-template-columns:1fr!important}
   .pq-side{order:-1;top:60px;max-height:48vh;box-shadow:var(--shadow-lg)}
@@ -493,7 +505,10 @@ require_once __DIR__ . '/header.php';
                 <span style="color:var(--gray-300);margin:0 2px;">|</span>
                 <button type="button" class="btn btn-secondary btn-sm" data-autotiers title="Auto-generate tiers at 1×, 2×, 5×, 10× the first qty"><i data-lucide="zap"></i> Auto tiers</button>
                 <button type="button" class="btn btn-secondary btn-sm" data-addtier title="Add a blank tier row">+ tier</button>
+                <span style="color:var(--gray-300);margin:0 2px;">|</span>
+                <button type="button" class="btn btn-secondary btn-sm" data-findsimilar title="Look up what you charged for similar jobs in the past" style="border-color:var(--primary)!important;color:var(--primary)!important;"><i data-lucide="history"></i> Similar past quotes</button>
             </div>
+            <div class="pq-similar" data-similar style="display:none;"></div>
             <div class="pq-tiers-scroll"><table class="pq-tiers-table"><thead><tr><th>Quantity</th><th style="width:120px;">Unit price</th><th style="width:130px;">Total</th><th style="width:72px;">Mode</th><th style="width:50px;" title="Re-estimate this tier from the cost sheet">Est</th><th style="width:50px;"></th></tr></thead><tbody data-tiers></tbody></table></div>
         </div>
 
@@ -723,6 +738,7 @@ function pqAddItem(){
     node.querySelector('[data-addline]').addEventListener('click',function(){pqAddLine(node,'','',null);});
     node.querySelector('[data-addtier]').addEventListener('click',function(){pqAddTier(node,'',0);});
     node.querySelector('[data-autotiers]').addEventListener('click',function(){pqAutoTiers(node);});
+    node.querySelector('[data-findsimilar]').addEventListener('click',function(){pqFindSimilar(node);});
     node.querySelector('[data-addoption]').addEventListener('click',function(){pqAddOption(node,'',0);});
     node.querySelector('[data-title]').addEventListener('input',pqRecalc);
     // Manual mode toggle
@@ -1221,6 +1237,61 @@ function pqRecalc(){
         mEl.innerHTML='Est. cost '+money(cost)+' · margin '+money(margin)+' <strong>('+mpct.toFixed(1)+'%)</strong>'+(mpct<floor?' (below target)':'');
         mEl.style.color=mpct<floor?'#fca5a5':(mpct<floor+10?'#fcd34d':'#86efac');
     } else { mEl.textContent=''; mEl.style.color=''; }
+}
+
+/* ============================================================
+   SIMILAR PAST QUOTES — real price book lookup
+   ============================================================ */
+function psEsc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function pqSpecVal(node,key){var i=node.querySelector('[data-speclines] input[data-key="'+key+'"]');return i?i.value:'';}
+function pqFindSimilar(node){
+    var panel=node.querySelector('[data-similar]');
+    panel.style.display='block';
+    panel.innerHTML='<div class="ps-empty">Searching your past quotes…</div>';
+    var paper=pqSpecVal(node,'paper')||((PAPER[node.querySelector('[data-paper]').value]||{}).name||'');
+    var finishing=pqSpecVal(node,'finishing');
+    var cf=node.querySelector('[data-cf]').value||'0', cb=node.querySelector('[data-cb]').value||'0';
+    var tok=document.querySelector('#quoteForm [name=_token]');
+    var payload={_token:tok?tok.value:'',title:node.querySelector('[data-title]').value,paper:paper,finishing:finishing,
+        printing:cf+'/'+cb,size_w:parseFloat(node.querySelector('[data-w]').value)||0,size_h:parseFloat(node.querySelector('[data-h]').value)||0};
+    fetch('ajax/pq_similar.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(function(r){return r.json();})
+        .then(function(d){pqRenderSimilar(node,d);})
+        .catch(function(){panel.innerHTML='<div class="ps-empty">Could not load suggestions. Try again.</div>';});
+}
+function pqRenderSimilar(node,d){
+    var panel=node.querySelector('[data-similar]');
+    var cur=(d&&d.currency)||CUR, m=(d&&d.matches)||[];
+    var html='<div class="ps-head"><span>Similar past quotes — click a price to use it</span><button type="button" class="ps-close" title="Hide">&times;</button></div>';
+    if(!m.length){ html+='<div class="ps-empty">No similar past quotes found yet. Fill in the Paper / Finishing / item name above, then try again.</div>'; }
+    m.forEach(function(x){
+        html+='<div class="ps-card"><div class="ps-title">'+psEsc(x.title)+'</div>'+
+            '<div class="ps-meta">'+psEsc(x.customer)+(x.date?' &middot; '+psEsc(x.date):'')+(x.paper?' &middot; '+psEsc(x.paper):'')+(x.finishing?' &middot; '+psEsc(x.finishing):'')+(x.size?' &middot; '+psEsc(x.size):'')+'</div><div class="ps-tiers">';
+        (x.tiers||[]).forEach(function(t){
+            var lab=t.quantity>0?Number(t.quantity).toLocaleString():psEsc(t.label||'');
+            html+='<button type="button" class="ps-chip" data-q="'+(t.quantity||0)+'" data-p="'+t.price+'" data-l="'+psEsc(t.label||lab)+'"><b>'+lab+'</b> &rarr; '+cur+Math.round(t.price).toLocaleString()+'</button>';
+        });
+        html+='</div></div>';
+    });
+    panel.innerHTML=html;
+    var cl=panel.querySelector('.ps-close'); if(cl) cl.addEventListener('click',function(){panel.style.display='none';});
+    panel.querySelectorAll('.ps-chip').forEach(function(ch){
+        ch.addEventListener('click',function(){
+            var q=parseInt(this.getAttribute('data-q'),10)||0, p=parseFloat(this.getAttribute('data-p'))||0;
+            var l=this.getAttribute('data-l')||(q?q.toLocaleString():'');
+            pqAddManualTier(node,q?q.toLocaleString():l,q,p);
+        });
+    });
+}
+function pqAddManualTier(node,label,qty,price){
+    pqAddTier(node,label,qty);
+    var rows=node.querySelectorAll('[data-tiers] tr'); var row=rows[rows.length-1]; if(!row) return;
+    row._mode='manual';
+    var q=parseInt(row.querySelector('[data-tqty]').value,10)||qty||0;
+    row.querySelector('[data-ttotal]').value=(+price).toFixed(2);
+    row.querySelector('[data-tunit]').value=q>0?((+price)/q).toFixed(2):'0';
+    var badge=row.querySelector('[data-tmodebadge]'); if(badge){badge.textContent='Manual';badge.className='pq-tier-badge pq-tier-manual';}
+    pqRecalc();
 }
 
 function pqSerializeItem(node){

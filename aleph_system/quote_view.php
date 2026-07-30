@@ -70,6 +70,7 @@ require_once __DIR__ . '/header.php';
     <div class="page-title"><h1>Quote #<?= str_pad($quote['quote_number'], 4, '0', STR_PAD_LEFT) ?></h1><p class="page-subtitle"><?= h($quote['title']) ?></p></div>
     <div class="page-actions">
         <a href="quote_edit.php?id=<?= $id ?>" class="btn btn-primary"><i data-lucide="pencil"></i> Edit</a>
+        <a href="quote_docx.php?id=<?= $id ?>" class="btn btn-secondary"><i data-lucide="file-text"></i> Download as Word</a>
         <a href="quote_pdf.php?id=<?= $id ?>" target="_blank" class="btn btn-secondary"><i data-lucide="printer"></i> Print / PDF</a>
         <a href="quotes.php" class="btn btn-secondary"><i data-lucide="arrow-left"></i> Back</a>
     </div>
